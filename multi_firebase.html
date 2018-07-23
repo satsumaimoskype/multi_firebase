@@ -150,6 +150,7 @@
     apiKey: "AIzaSyDmrX4n30MnX5EHk3XkePI_GiJURKdagXM",  // <-- please set your API key
     databaseURL: "https://webrtc-app-47803.firebaseio.com",  // <-- please set your database URL
   };
+  let databaseRoot = 'basic2016/multi/'; // <--- plaase set your database root for signaling
   firebase.initializeApp(config);
   let database = firebase.database();
   let roomBroadcastRef;
@@ -162,7 +163,6 @@
   function joinRoom(room) {
     console.log('join room name = ' + room);
 
-    let databaseRoot = 'basic2016/multi/'; // <--- plaase set your database root for signaling
     let key = database.ref(databaseRoot + room + '/_join_').push({ joined : 'unknown'}).key
     clientId = 'member_' + key;
     console.log('joined to room=' + room + ' as clientId=' + clientId);
