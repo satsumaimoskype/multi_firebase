@@ -271,6 +271,12 @@
 
     console.log('===== sending from=' + clientId + ' ,  to=' + id);
     msg.from = clientId;
+
+// ERROR
+// Uncaught ReferenceError: databaseRoot is not defined
+
+    let databaseRoot = 'basic2016/multi/';
+
     database.ref(databaseRoot + room + '/_direct_/' + id).push(msg);
   }
 
