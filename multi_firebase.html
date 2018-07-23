@@ -162,7 +162,7 @@
   function joinRoom(room) {
     console.log('join room name = ' + room);
 
-    let databaseRoot = 'myapp/multi/'; // <--- plaase set your database root for signaling
+    let databaseRoot = 'basic2016/multi/'; // <--- plaase set your database root for signaling
     let key = database.ref(databaseRoot + room + '/_join_').push({ joined : 'unknown'}).key
     clientId = 'member_' + key;
     console.log('joined to room=' + room + ' as clientId=' + clientId);
